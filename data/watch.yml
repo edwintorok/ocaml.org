@@ -6,7 +6,7 @@ watch:
   embed_path: /videos/embed/e1ee0fc0-50ef-4a1c-894a-17df181424cb
   thumbnail_path: /static/thumbnails/94ead657-79a0-4c10-8435-9e13906a6c44.jpg
   published_at: 2021-08-27T13:23:10.199Z
-  updated_at: 2022-04-27T11:01:00.072Z
+  updated_at: 2022-05-01T00:01:00.072Z
   language: English
   category: Science & Technology
 - name: A Case for Multi-Switch Constraints in OPAM
@@ -258,7 +258,7 @@ watch:
   embed_path: /videos/embed/74ece0a8-380f-4e2a-bef5-c6bb9092be89
   thumbnail_path: /static/thumbnails/d48bf7bb-8c46-4d49-a3a6-734bf339343b.jpg
   published_at: 2021-08-27T14:41:07.000Z
-  updated_at: 2022-04-26T14:01:00.071Z
+  updated_at: 2022-05-01T10:01:00.078Z
   language: English
   category: Science & Technology
 - name: Experiments in Generic Programming
@@ -307,7 +307,7 @@ watch:
   embed_path: /videos/embed/e0a6e6f2-0d40-4dfc-9308-001c8e0f64d6
   thumbnail_path: /static/thumbnails/729cda51-abb3-4c8d-9d0e-b922e81be518.jpg
   published_at: 2021-08-27T10:12:58.000Z
-  updated_at: 2022-03-14T18:01:00.092Z
+  updated_at: 2022-04-30T13:01:00.073Z
   language: English
   category: Science & Technology
 - name: High Performance Client-Side Web Programming with SPOC and Js of ocaml
@@ -629,7 +629,7 @@ watch:
   embed_path: /videos/embed/ce20839e-4bfc-4d74-925b-485a6b052ddf
   thumbnail_path: /static/thumbnails/30bc6019-ecab-40e5-a7b6-c294ac9a7344.jpg
   published_at: 2020-08-28T00:00:00.000Z
-  updated_at: 2022-04-15T17:01:00.083Z
+  updated_at: 2022-04-30T12:01:00.065Z
   language: Unknown
   category: Misc
 - name: Persistent Networking with Irmin and MirageOS
@@ -758,7 +758,7 @@ watch:
   embed_path: /videos/embed/0e2070fd-798b-47f7-8e69-ef75e967e516
   thumbnail_path: /static/thumbnails/4fd6a51f-686c-4f6f-8026-83692304b432.jpg
   published_at: 2020-08-28T00:00:00.000Z
-  updated_at: 2022-04-24T12:01:00.079Z
+  updated_at: 2022-04-30T06:01:00.079Z
   language: English
   category: Science & Technology
 - name: Study of OCaml programs' memory behaviour
@@ -780,7 +780,7 @@ watch:
   embed_path: /videos/embed/28545b27-4637-47a5-8edd-6b904daef19c
   thumbnail_path: /static/thumbnails/dde19660-653d-4dc3-9e81-54b2e3ab22a2.jpg
   published_at: 2020-08-28T00:00:00.000Z
-  updated_at: 2021-09-04T20:02:00.472Z
+  updated_at: 2022-05-01T07:01:00.087Z
   language: Unknown
   category: Misc
 - name: The OCaml Platform 1.0 - Reason ML
@@ -919,7 +919,7 @@ watch:
   embed_path: /videos/embed/99b3dc75-9f93-4677-9f8b-076546725512
   thumbnail_path: /static/thumbnails/acd50ed1-43cf-45fd-a55e-9c40a6bf58ba.jpg
   published_at: 2020-08-28T00:00:00.000Z
-  updated_at: 2021-08-29T09:02:00.201Z
+  updated_at: 2022-05-01T07:01:00.302Z
   language: Unknown
   category: Misc
 - name: Using Preferences to Tame your Package Manager
