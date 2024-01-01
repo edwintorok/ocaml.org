@@ -203,7 +203,7 @@ make sense to track the place where an asynchronous exceptions was thrown, as it
 could be anywhere. Deciding if an application needs to catch those exceptions
 and how it should be done is beyond the scope of this tutorial. Interested
 readers may refer to Guillaume Munch-Maccagnoni's [A Guide to recover from
-interrupts](https://guillaume.munch.name/software/ocaml/memprof-limits/recovering.html).
+interrupts](https://guillaume.munch.name/software/ocaml/memprof-limits/recovering.html - [1 Client error: Failure when receiving data from the peer]).
 
 ### Documentation
 

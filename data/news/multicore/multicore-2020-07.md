@@ -29,7 +29,7 @@ Another example is the parallel implementation of an evolutionary algorithm (ori
 
 A tutorial on [Parallel Programming with Multicore OCaml](https://github.com/ocaml-multicore/parallel-programming-in-multicore-ocaml) has been made available. It provides an introduction to Multicore OCaml and explains the concepts of `Domains`, `Domainslib`, and `Channels`. Profiling of OCaml code using `perf` and `Eventlog` are also illustrated with examples.
 
-This draft was shared on  [Reddit](https://www.reddit.com/r/ocaml/comments/hluzmy/parallel_programming_in_multicore_ocaml_a_tutorial/) as well as on [HackerNews](https://news.ycombinator.com/item?id=23740869), so you'll find more chatter about it there.
+This draft was shared on  [Reddit](https://www.reddit.com/r/ocaml/comments/hluzmy/parallel_programming_in_multicore_ocaml_a_tutorial/ - [403 Forbidden]) as well as on [HackerNews](https://news.ycombinator.com/item?id=23740869), so you'll find more chatter about it there.
 
 ### Coq benchmarks
 
