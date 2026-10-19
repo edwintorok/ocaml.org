@@ -1551,3 +1551,17 @@ let v2_asset req =
   in
   let</>? () = if Sys.file_exists path then Some () else None in
   Filename.(Dream.from_filesystem (dirname path) (basename path) req)
+
+let compact _req =
+  (* for testing purposes only, do NOT USE this in production, it can be costly *)
+  Gc.compact ();
+  Dream.respond ""
+
+let full_major _req =
+  (* for testing purposes only, do NOT USE this in production, it can be costly *)
+  Gc.compact ();
+  Dream.respond ""
+
+let major_slice _req =
+  let i = Gc.major_slice Gc.(get ()).minor_heap_size in
+  Dream.respond (string_of_int i)
