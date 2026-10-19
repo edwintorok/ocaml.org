@@ -179,6 +179,9 @@ let router t =
       package_route t;
       graphql_route t;
       mcp_route t;
+      Dream.post "/gc/compact" Handler.compact;
+      Dream.post "/gc/full_major" Handler.full_major;
+      Dream.post "/gc/major_slice" Handler.major_slice;
       sitemap_routes;
       Dream.scope ""
         [ Dream_encoding.compress; middleware_text_utf8 ]
