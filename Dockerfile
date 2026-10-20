@@ -65,6 +65,7 @@ ADD data/v2 /v2
 RUN git config --global --add safe.directory /var/opam-repository
 
 ENV DREAM_VERBOSITY=info \
+    OCAMLRUNPARAM=Xsmall_heap_limit=41943040 \
     OCAMLORG_HTTP_PORT=8080 \
     OCAMLORG_MANUAL_PATH=/manual \
     OCAMLORG_PKG_STATE_PATH=/var/package.state \

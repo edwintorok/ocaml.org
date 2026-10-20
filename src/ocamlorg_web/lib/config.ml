@@ -10,6 +10,9 @@ let manual_path =
 
 let v2_path = env_with_default "OCAMLORG_V2_PATH" "data/v2"
 
+let desired_heap_size_mib =
+  env_with_default "OCAMLORG_DESIRED_HEAP_SIZE_MIB" "1024" |> int_of_string
+
 (* MCP server endpoint (issue #3775). Off by default while it stabilises. *)
 let mcp_enabled = env_with_default "OCAMLORG_MCP_ENABLED" "false" |> to_bool
 
