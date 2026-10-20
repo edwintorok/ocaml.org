@@ -32,6 +32,10 @@ COPY --chown=opam ocamlorg.opam .
 RUN opam pin add -n https://github.com/ocaml-ppx/ppx_import.git#4fffec8af4167e61a2bf934653ef8847ed472283
 RUN OPAMSOLVERTIMEOUT=300 opam install . --deps-only
 
+# This is very slow when 'git pull' does it, and apparently cannot be avoided, not even with --no-prune
+# So ensure we cache this, instead of repeating it every time the source code changes
+RUN rm -rf  ~/opam-repository/.git/refs/remotes/pull
+
 # Build project
 COPY --chown=opam . .
 RUN opam exec -- dune build @install --profile=release
