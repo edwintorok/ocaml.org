@@ -17,7 +17,6 @@ module Heap_size_watcher = struct
   let src = Logs.Src.create "heap_size_watcher"
   module Log = (val Logs.src_log src)
 
-
   let desired_heap_size_words =
     (Config.desired_heap_size_mib lsl 20) / (Sys.word_size / 8)
 
@@ -36,6 +35,14 @@ module Heap_size_watcher = struct
     let delta_words = sampled_stats.heap_words - desired_heap_size_words in
     Log.debug (fun m -> m "reduce_heap_size_loop, delta_words = %d" delta_words);
     if delta_words > 0 then begin
+      Log.debug (fun m -> m "running quick compaction");
+      Gc.quick_compact ();
+    end;
+    Gc.minor ();
+    let sampled_stats = Gc.(quick_stat ()) in
+    let delta_words = sampled_stats.heap_words - desired_heap_size_words in
+    Log.debug (fun m -> m "reduce_heap_size_loop, delta_words = %d" delta_words);
+    if delta_words > 0 then begin
       incr additional_slices;
       let active = Atomic.get active_requests in
       let slice_words = delta_words / (1 + active) in
@@ -48,6 +55,7 @@ module Heap_size_watcher = struct
     reduce_heap_size_worker ()
 
   let init () =
+    let (_ : Gc.alarm) = Gc.create_alarm Gc.quick_compact in
     Lwt.async reduce_heap_size_worker
 
 
@@ -55,7 +63,9 @@ module Heap_size_watcher = struct
     Atomic.incr active_requests
 
   let on_req_complete () =
+    Logs.Src.set_level src (Some Logs.Debug);
     Atomic.decr active_requests;
+    Gc.minor (); (* TODO: not on every request *)
     let sampled_stats = Gc.(quick_stat ()) in
     let live_words = sampled_stats.live_words
     and space_overhead = Gc.(get ()).space_overhead in
@@ -92,7 +102,6 @@ let () =
   Logs.set_reporter (Logs.format_reporter ());
   Logs.set_level (Some Info)
 
-let () = Logs.Src.set_level Heap_size_watcher.src (Some Logs.Debug)
 
 let run () =
   Mirage_crypto_rng_unix.use_default ();
