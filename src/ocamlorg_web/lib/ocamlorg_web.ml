@@ -17,6 +17,7 @@ module Heap_size_watcher = struct
   let src = Logs.Src.create "heap_size_watcher"
   module Log = (val Logs.src_log src)
 
+
   let desired_heap_size_words =
     (Config.desired_heap_size_mib lsl 20) / (Sys.word_size / 8)
 
@@ -90,6 +91,8 @@ let on_request_wrap on_begin on_completed next_handler req =
 let () =
   Logs.set_reporter (Logs.format_reporter ());
   Logs.set_level (Some Info)
+
+let () = Logs.Src.set_level Heap_size_watcher.src (Some Logs.Debug)
 
 let run () =
   Mirage_crypto_rng_unix.use_default ();
